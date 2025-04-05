@@ -104,12 +104,16 @@ const Layout = ({ children }: LayoutProps) => {
               variant="ghost"
               className={`flex flex-col items-center justify-center py-4 ${
                 location.pathname === item.path
-                  ? "text-health-teal"
-                  : "text-muted-foreground"
+                  ? "text-health-teal  focus:bg-background"
+                  : "text-muted-foreground hover:bg-white"
               }`}
               onClick={() => navigate(item.path)}
             >
-              <div className="mb-0 mt-2">{item.icon}</div>
+              <div className={`mb-0 mt-2 ${
+                location.pathname === item.path
+                  ? "drop-shadow-[0px_0px_12px_rgba(13,148,136,0.8)] "
+                  : ""
+              } `}>{item.icon}</div>
               <span className="text-[10px]">{item.label}</span>
             </Button>
           ))}
