@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 159 100% 29%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 156 100% 35%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 160 51% 87%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 159 100% 29%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 156 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 159 70% 39%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 158 30% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 156 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-opensans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold;
+  }
+}
+
+@layer components {
+  .metric-card {
+    @apply bg-white dark:bg-card rounded-xl shadow-md p-4 border border-border transition-all duration-300 hover:shadow-lg;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full bg-health-green animate-progress-fill;
+  }
+  
+  .recipe-card {
+    @apply bg-white dark:bg-card rounded-xl shadow-md p-4 border border-border transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+  
+  .tip-card {
+    @apply bg-white dark:bg-card rounded-xl shadow-md p-6 border border-border transition-all duration-300;
+  }
+  
+  .ripple {
+    @apply absolute bg-white/30 rounded-full animate-ripple;
+  }
+}
